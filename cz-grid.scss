@@ -1,0 +1,72 @@
+// the settings
+$max-width : 1200px;
+$col-number : 12;
+$col-width : 100%/$col-number;
+$col-gutter : 15px;
+$xs :320px; //small phone
+$sm : 480px; //large phone
+$md : 768px; //tablet
+$lg : 1024px; //desktop
+$xlg : 1200px; //large desktop
+
+* {
+	box-sizing: border-box;
+}
+// the container
+.cz-container {
+	width: 100%;
+	max-width: $max-width;
+	margin: 0 auto;
+}
+.row:before,
+.row:after {
+	content:'';
+	display: table;
+	clear: both;
+}
+// the column
+[class*='col-']{
+	float: left;
+	min-height:1px;
+	width: $col-width;
+	padding: $col-gutter;
+}
+
+
+@for $i from 1 through $col-number {
+	.col-xs-#{$i} {
+		width: $col-width * $i 
+	}
+}
+
+@media screen and (min-width:$sm) {
+	@for $i from 1 through $col-number {
+		.col-sm-#{$i} {
+			width: $col-width * $i
+		}
+	}
+}
+
+@media screen and (min-width:$md){
+	@for $i from 1 through $col-number {
+		.col-md-#{$i} {
+			width: $col-width * $i
+		}
+	}
+}
+
+@media screen and (min-width:$lg){
+	@for $i from 1 through $col-number {
+		.col-lg-#{$i} {
+			width: $col-width * $i
+		}
+	}
+}
+
+@media screen and (min-width:$xlg){
+	@for $i from 1 through $col-number {
+		.col-xlg-#{$i} {
+			width: $col-width * $i
+		}
+	}
+}
